@@ -14,16 +14,16 @@ class Aruco:
         self.CAP = cap
         # self.CAP.set(3, 1280)
         # self.CAP.set(4, 720)
-        aruco_dict = aruco.Dictionary_get(aruco.DICT_6X6_250)
-        parameters =  aruco.DetectorParameters_create()
+        self.aruco_dict = aruco.Dictionary_get(aruco.DICT_6X6_250)
+        self.parameters =  aruco.DetectorParameters_create()
 
     def get_markers(self):
         """Функция читает с камеры и возвращает координаты углов и idшники меток"""
 
         ret, self.frame = self.CAP.read()
         # self.frame = cv2.cvtColor(self.frame, cv2.COLOR_BGR2GRAY)
-        self.corners, self.ids, _ = aruco.detectMarkers(self.frame, aruco_dict,
-                                                        parameters=parameters)
+        self.corners, self.ids, _ = aruco.detectMarkers(self.frame, self.aruco_dict,
+                                                        parameters=self.parameters)
         return self.corners, self.ids
 
     def render_frame(self):
