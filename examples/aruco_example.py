@@ -6,10 +6,13 @@ import cv2
 from cvi import Aruco, aruco_center, aruco_angel
 from cvi import Visualizer
 
+
 def data(corner):
     """Функция возвращает данные о метке в читабельном формате."""
+
     x, y = aruco_center(corner)
-    return "x = {}; y = {}; angel = {}".format(x, y, round(aruco_angel(corner), 2))
+    return "x = {0}; y = {1}; angel = {2}".format(x, y, round(aruco_angel(corner), 2))
+
 
 # Объявляем камеру
 cap = cv2.VideoCapture(0)

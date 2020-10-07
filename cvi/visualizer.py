@@ -1,4 +1,5 @@
 """Файл с классом визуализатора."""
+
 from datetime import datetime, timedelta
 import numpy as np
 import cv2
@@ -24,6 +25,7 @@ class Visualizer:
     notification_flag = False
     notification_text = ''
     notification_time = 0
+
 
     def handle(self, frame):
         """Функция отрисовки процессов и параметров в кадре."""
@@ -98,12 +100,14 @@ class Visualizer:
 
         return frame
 
+
     def notify(self, notification):
         """Функция для отправки уведомления в визуализатор."""
 
         self.notification_flag = True
         self.notification_text = notification
         self.notification_time = datetime.now()
+
 
     def record(self, file_name="Unknown.mp4"):
         pass

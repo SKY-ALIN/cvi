@@ -1,8 +1,18 @@
-# CVI
-Модуль упрощает работу с библиотекой компьютерногого зрения OpenCV. В модуль включён визуализатор который позволяет удобно отображать процессы происходящие внутри программы и Аруко метки.
+# CVI - Computer Vision Interface
 
-## Installation
+Модуль упрощает работу с библиотекой компьютерного зрения OpenCV. В модуль включён визуализатор который позволяет удобно отображать процессы происходящие внутри программы и Аруко метки.
+
+### Installation
+
 ```shell
-python3 -m pip install --user opencv-python opencv-contrib-python
 git clone https://github.com/SKY-ALIN/cvi.git
+cd cvi
+python3 setup.py install
+```
+
+Test
+
+```shell
+import cvi
+print(cvi.__version__)
 ```
