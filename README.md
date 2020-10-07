@@ -12,7 +12,7 @@ python3 setup.py install
 
 Test
 
-```shell
+```python
 import cvi
 print(cvi.__version__)
 ```
